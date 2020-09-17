@@ -1,24 +1,19 @@
 <template>
-  <v-app>
-    <v-content>
-      <div class="sections-menu">
-        <span
-          class="menu-point"
-          v-bind:class="{ active: activeSection == index }"
-          v-on:click="scrollToSection(index)"
-          v-for="(offset, index) in offsets"
-          v-bind:key="index"
-        >
-        </span>
-      </div>
-      <section class="panel" v-for="(slide, i) in slides" :key="i">
-        <div
-          class="img"
-          :style="`background-image:url(${slide.imageURL})`"
-        ></div>
-      </section>
-    </v-content>
-  </v-app>
+  <div class="vue-fullpage-horz-scroller">
+    <div class="sections-menu">
+      <span
+        class="menu-point"
+        v-bind:class="{ active: activeSection == index }"
+        v-on:click="scrollToSection(index)"
+        v-for="(offset, index) in offsets"
+        v-bind:key="index"
+      >
+      </span>
+    </div>
+    <section class="panel" v-for="(slide, i) in slides" :key="i">
+      <div class="img" :style="`background-image:url(${slide.imageURL})`"></div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -27,8 +22,8 @@ export default {
   props: {
     slides: {
       type: Array,
-      required: true
-    },    
+      required: true,
+    },
   },
   data: () => ({
     inMove: false,
@@ -87,9 +82,7 @@ export default {
       this.activeSection = id;
       this.inMove = true;
 
-      document
-        .getElementsByTagName("section")
-        [id].scrollIntoView({ behavior: "smooth", inline: "nearest" });
+      document.getElementsByTagName("section")[id].scrollIntoView({ behavior: "smooth", inline: "nearest" });
 
       clearTimeout(timeout);
       timeout = setTimeout(() => {
@@ -140,48 +133,55 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-#app {
-  background: #000;
-  width: 500%;
-  height: 100%;
-  overflow: hidden;
-  .sections-menu {
-    position: fixed;
-    z-index: 99;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    .menu-point {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #999;
-      display: block;
-      margin: 1rem 0;
-      opacity: 0.6;
-      transition: 0.4s ease all;
-      cursor: pointer;
-      &.active {
-        opacity: 1;
-        transform: scale(1.5);
-      }
-    }
-  }
-  section.panel {
-    width: 20%;
-    height: 100vh;
-    display: inline-flex;
-    float: left;
-    justify-content: center;
-    flex-direction: column;
-    .img {
-      background-size: 103% auto, cover;
-      background-position: -5px center;
-      width: 100%;
-      height: 100vh;
-      opacity: 0.6;
-    }
-  }
+<style>
+body {
+  margin:0!important;
+  padding:0!important;
+  overflow: hidden!important;
+}
+.vue-fullpage-horz-scroller {
+  background: #000!important;
+  width: 500%!important;
+  height: 100%!important;
+  overflow: hidden!important;
+  margin:0!important;
+  padding:0!important;
+}
+.vue-fullpage-horz-scroller .sections-menu {
+  position: fixed;
+  z-index: 99;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.vue-fullpage-horz-scroller .sections-menu .menu-point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #999;
+  display: block;
+  margin: 1rem 0;
+  opacity: 0.6;
+  transition: 0.4s ease all;
+  cursor: pointer;
+}
+.vue-fullpage-horz-scroller .sections-menu .menu-point.active {
+  opacity: 1;
+  transform: scale(1.5);
+}
+.vue-fullpage-horz-scroller section.panel {
+  width: 20%;
+  height: 100vh;
+  display: inline-flex;
+  float: left;
+  justify-content: center;
+  flex-direction: column;
+}
+.vue-fullpage-horz-scroller section.panel .img {
+  background-size: 103% auto, cover;
+  background-position: -5px center;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.6;
 }
 </style>
