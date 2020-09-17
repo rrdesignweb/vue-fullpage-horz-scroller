@@ -23,34 +23,18 @@
 
 <script>
 export default {
-  name: "Section",
+  name: "VueFullPageHorzScroller",
+  props: {
+    slides: {
+      type: Array,
+      required: true
+    },    
+  },
   data: () => ({
     inMove: false,
     activeSection: 0,
     offsets: [],
     touchStartX: 0,
-    slides: [
-      {
-        imageURL:
-          "https://images.pexels.com/photos/1459347/pexels-photo-1459347.jpeg",
-      },
-      {
-        imageURL:
-          "https://images.pexels.com/photos/3709434/pexels-photo-3709434.jpeg",
-      },
-      {
-        imageURL:
-          "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg",
-      },
-      {
-        imageURL:
-          "https://images.pexels.com/photos/763097/pexels-photo-763097.jpeg",
-      },
-      {
-        imageURL:
-          "https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg",
-      },
-    ],
   }),
   methods: {
     calculateSectionOffsets() {

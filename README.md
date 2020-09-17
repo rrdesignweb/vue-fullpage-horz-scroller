@@ -1,24 +1,35 @@
 # Vue Full Page Horizontal Scroller
 
-## Project setup
-```
-npm install
+## How to install
+
+### npm
+
+```bash
+$ npm install vue-fullpage-horz-scroller --save
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Quick start
+
+### Vue.js
+
+You can import in your `main.js` file
+
+```js
+import Vue from "vue";
+import VueFullPageHorzScroller from "vue-fullpage-horz-scroller";
+
+Vue.use(VueFullPageHorzScroller);
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+Or locally in any component
+
+```js
+import { VueFullPageHorzScroller } from "vue-fullpage-horz-scroller";
+
+export default {
+  components: {
+    VueFullPageHorzScroller
+  }
+};
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -1,7 +1,7 @@
 {
   "name": "@rothunda/vue-fullpage-horz-scroller",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "author": "Rowan Richardson",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,7 +12,6 @@
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
     "vue-scrollmagic": "^1.2.0",
     "vue-scrollto": "^2.18.1",
     "vuetify": "^2.2.11"
@@ -37,17 +36,19 @@
     "vuetify-loader": "^1.3.0"
   },
   "description": "```\r npm install\r ```",
-  "main": ".eslintrc.js",
+  "main": "./vue-fullpage-horizontal-scroller.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rrdesignweb/vue-fullpage-horz-scroller.git"
   },
   "keywords": [
-    "Vuejs",
-    "Horizontal",
-    "Scroller"
+    "vue",
+    "vuejs",
+    "scroller",
+    "vue-components",
+    "horizontal"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rrdesignweb/vue-fullpage-horz-scroller/issues"
   },
