@@ -5,7 +5,7 @@
 ### npm
 
 ```bash
-$ npm install @rothunda/vue-fullpage-horz-scroller --save
+$ npm install vue-fullpage-horz-scroller --save
 ```
 
 ## Quick start
@@ -16,7 +16,7 @@ You can import in your `main.js` file
 
 ```js
 import Vue from "vue";
-import { VueFullPageHorzScroller } from "@rothunda/vue-fullpage-horz-scroller";
+import { VueFullPageHorzScroller } from "vue-fullpage-horz-scroller";
 
 Vue.use(VueFullPageHorzScroller);
 ```
